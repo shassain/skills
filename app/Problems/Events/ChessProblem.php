@@ -38,7 +38,15 @@ class ChessProblem implements IProblem{
     });
     $this->chess=$chess;
   }
-  
+  private function obstacleExists($x,$y,$obstacles):bool{
+    $first=$obstacles->first(function($ele,$key)use($x,$y){
+      return $ele->x()==$x && $ele->y()==$y;
+    });
+    if($first!=null){
+      return true;
+    }
+    return false;
+  } 
   public function solved(){
     $mov=0;
     $limit=$this->chess->board();
@@ -46,74 +54,50 @@ class ChessProblem implements IProblem{
     $x=$this->chess->queen()->x();
 
     for($xx = $x-1; $xx >= 1; $xx--){
-      $first=$this->chess->obstacles()->first(function($ele,$key)use($xx,$y){
-        return $ele->x()==$xx && $ele->y()==$y;
-      });
-      if($first!=null){
+      if($this->obstacleExists($xx,$y,$this->chess->obstacles())){
         break;
       }
       $mov++;
     }
     for($xx=$x-1,$yy=$y-1;$xx>=1 && $yy>=1 ;$xx--,$yy--){
-      $first=$this->chess->obstacles()->first(function($ele,$key)use($xx,$yy){
-        return $ele->x()==$xx && $ele->y()==$yy;
-      });
-      if($first!=null){
+      if($this->obstacleExists($xx,$yy,$this->chess->obstacles())){
         break;
       }
       $mov++;
     }
     for($xx=$x-1,$yy=$y+1;$xx>=1 && $yy<=$limit ;$xx--,$yy++){
-      $first=$this->chess->obstacles()->first(function($ele,$key)use($xx,$yy){
-        return $ele->x()==$xx && $ele->y()==$yy;
-      });
-      if($first!=null){
+      if($this->obstacleExists($xx,$yy,$this->chess->obstacles())){
         break;
       }
       $mov++;
     }
     
     for($xx=$x+1;$xx<=$limit ;$xx++){
-      $first=$this->chess->obstacles()->first(function($ele,$key)use($xx,$y){
-        return $ele->x()==$xx && $ele->y()==$y;
-      });
-      if($first!=null){
+      if($this->obstacleExists($xx,$y,$this->chess->obstacles())){
         break;
       }
       $mov++;
     }
     for($xx=$x+1,$yy=$y-1;$xx<=$limit && $yy>=1 ;$xx++,$yy--){
-      $first=$this->chess->obstacles()->first(function($ele,$key)use($xx,$yy){
-        return $ele->x()==$xx && $ele->y()==$yy;
-      });
-      if($first!=null){
+      if($this->obstacleExists($xx,$yy,$this->chess->obstacles())){
         break;
       }
       $mov++;
     }
     for($xx=$x+1,$yy=$y+1;$xx<=$limit && $yy<=$limit ;$xx++,$yy++){
-      $first=$this->chess->obstacles()->first(function($ele,$key)use($xx,$yy){
-        return $ele->x()==$xx && $ele->y()==$yy;
-      });
-      if($first!=null){
+      if($this->obstacleExists($xx,$yy,$this->chess->obstacles())){
         break;
       }
       $mov++;
     }
     for($yy=$y+1;$yy<=$limit ;$yy++){
-      $first=$this->chess->obstacles()->first(function($ele,$key)use($x,$yy){
-        return $ele->x()==$x && $ele->y()==$yy;
-      });
-      if($first!=null){
+      if($this->obstacleExists($x,$yy,$this->chess->obstacles())){
         break;
       }
       $mov++;
     }
     for($yy=$y-1;$yy>=1 ;$yy--){
-      $first=$this->chess->obstacles()->first(function($ele,$key)use($x,$yy){
-        return $ele->x()==$x && $ele->y()==$yy;
-      });
-      if($first!=null){
+      if($this->obstacleExists($x,$yy,$this->chess->obstacles())){
         break;
       }
       $mov++;
