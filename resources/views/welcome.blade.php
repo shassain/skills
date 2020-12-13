@@ -80,7 +80,7 @@
             @endif
 
             <div class="content">
-                <form action="{{route('api.problem1')}}" method="post">
+                <form action="{{route('api.problem2')}}" method="post">
                 @csrf
                 <textarea name="input1" id="" cols="30" rows="10">
                 </textarea>
