@@ -69,12 +69,12 @@ class StringLoveProblem implements IProblem{
     return $lcp;
   }
   function toNumber($dest)
-    {
-        if ($dest)
-            return ord(strtolower($dest)) - 96;
-        else
-            return 0;
-    }
+  {
+      if ($dest)
+          return ord(strtolower($dest)) - 96;
+      else
+          return 0;
+  }
   public function Suffix(string $s){
     
     $N = strlen($s);
@@ -116,57 +116,57 @@ class StringLoveProblem implements IProblem{
     return $myTuple;
   }
   public function SuffixArray(int $length,string $str)
-    {
-        $j=0; $k=0; $h=0;
-        $split=str_split($str);
-        asort($split);
-        $split=collect($split);
-        $originalKeys=collect();
-        $br=collect();
-        $split->each(function($value,$key)use($originalKeys,$br){
-            $originalKeys->push($key);
-            $br->push(0);
-        });
-        $originalKeys->each(function($value,$key)use($split,$originalKeys,$br){
-            $br[$value]=($key == 0 || $split[$value] != $split[$originalKeys[$key - 1]])
-                            ?
-                            $key
-                            :
-                            $br[$originalKeys[$key - 1]];
-        });        
-        for ($h = 1; $h < $length; $h *=2)
-        {
-            $seconds=[];
-            $first=[];
-            for ($i = 0; $i < $length; $i++)
-                $first[$i] = $seconds[$i] = -1;
-            for ($i = $length - 1; $i >= 0; $i--)
-            {
-                if ($originalKeys[$i])
-                {
-                    $j = $originalKeys[$i] - $h;
-                    if ($j < 0) $j += $length;
-                    $seconds[$j] = $first[$br[$j]];
-                    $first[$br[$j]] = $j;
-                }
-            }
-            $j = $length - $h;
-            $seconds[$j] = $first[$br[$j]];
-            $first[$br[$j]] = $j;
-            for ($i = $k = 0; $i < $length; $i++)
-                if ($first[$i] >= 0)
-                    for ($j = $first[$i]; $j >= 0; $j = $seconds[$j])
-                        $originalKeys[$k++] = $j;
+  {
+      $j=0; $k=0; $h=0;
+      $split=str_split($str);
+      asort($split);
+      $split=collect($split);
+      $originalKeys=collect();
+      $br=collect();
+      $split->each(function($value,$key)use($originalKeys,$br){
+          $originalKeys->push($key);
+          $br->push(0);
+      });
+      $originalKeys->each(function($value,$key)use($split,$originalKeys,$br){
+          $br[$value]=($key == 0 || $split[$value] != $split[$originalKeys[$key - 1]])
+                          ?
+                          $key
+                          :
+                          $br[$originalKeys[$key - 1]];
+      });        
+      for ($h = 1; $h < $length; $h *=2)
+      {
+          $seconds=[];
+          $first=[];
+          for ($i = 0; $i < $length; $i++)
+              $first[$i] = $seconds[$i] = -1;
+          for ($i = $length - 1; $i >= 0; $i--)
+          {
+              if ($originalKeys[$i])
+              {
+                  $j = $originalKeys[$i] - $h;
+                  if ($j < 0) $j += $length;
+                  $seconds[$j] = $first[$br[$j]];
+                  $first[$br[$j]] = $j;
+              }
+          }
+          $j = $length - $h;
+          $seconds[$j] = $first[$br[$j]];
+          $first[$br[$j]] = $j;
+          for ($i = $k = 0; $i < $length; $i++)
+              if ($first[$i] >= 0)
+                  for ($j = $first[$i]; $j >= 0; $j = $seconds[$j])
+                      $originalKeys[$k++] = $j;
 
-            for ($i = 0; $i < $length; $i++)
-                if ($i>0 && $originalKeys[$i] + $h < $length&&$originalKeys[$i - 1] + $h < $length&&$br[$originalKeys[$i]] == $br[$originalKeys[$i - 1]] && $br[$originalKeys[$i] + $h] == $br[$originalKeys[$i - 1] + $h])
-                    $nb[$originalKeys[$i]] = $nb[$originalKeys[$i - 1]];
-                else
-                    $nb[$originalKeys[$i]] = $i;
+          for ($i = 0; $i < $length; $i++)
+              if ($i>0 && $originalKeys[$i] + $h < $length&&$originalKeys[$i - 1] + $h < $length&&$br[$originalKeys[$i]] == $br[$originalKeys[$i - 1]] && $br[$originalKeys[$i] + $h] == $br[$originalKeys[$i - 1] + $h])
+                  $nb[$originalKeys[$i]] = $nb[$originalKeys[$i - 1]];
+              else
+                  $nb[$originalKeys[$i]] = $i;
 
-            for ($i = 0; $i < $length; $i++)
-                $br[$i] = $nb[$i];
-        }  
-        return $originalKeys;
-    }
+          for ($i = 0; $i < $length; $i++)
+              $br[$i] = $nb[$i];
+      }  
+      return $originalKeys;
+  }
 }
