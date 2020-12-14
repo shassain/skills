@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post("problema-1","PaddleController@index")->name("api.problem1");
 Route::post("problema-2","ChessController@index")->name("api.problem2");
+Route::post("problema-3","StringLoveController@index")->name("api.problem3");
