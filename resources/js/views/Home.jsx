@@ -3,7 +3,7 @@ import { cardList } from '../routes/routes'
 import Row from 'react-bootstrap/Row'
 import CardLink from './index/Card'
 const style = {
-  row: { position: 'absolute', top: "-30px" }
+  row: { position: 'relative', top: "-30px" }
 }
 const Home = () => {
   return <Row className="justify-content-md-center" style={style.row}>

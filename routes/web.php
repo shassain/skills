@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+for($i=1;$i<=3;$i++){
+    Route::get('problema-'.$i, function () {
+        return view('welcome');
+    }); 
+}

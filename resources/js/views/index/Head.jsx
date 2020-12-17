@@ -1,7 +1,7 @@
 import React from 'react'
 import Row from 'react-bootstrap/Row'
 const style = {
-  row: { background: "linear-gradient(to top left,#BBF164,#12B87F)" },
+  row: { background: "#12B87F" },
   div: { padding: "35px 35px 150px 35px", textAlign: "center" },
   h1: { fontSize: "3.5rem", color: "#093118" }
 }
