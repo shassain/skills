@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
 
 export const Pre = styled.pre`
   text-align: left;
-  margin: 1em 0;
   padding: 0.5em;
+  height: 350px;
   overflow: scroll;
 
   & .token-line {

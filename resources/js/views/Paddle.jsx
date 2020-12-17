@@ -1,8 +1,10 @@
 import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Problem from './complement/Problem'
 import CardTest from './complement/CardTest'
+import CardCode from './complement/CardCode'
+
+import { code } from './Paddle/code'
 const style = {
   col: {
     background: "#F3F4F6",
@@ -26,10 +28,10 @@ const Paddle = () => {
     <Col xs="12" md="10" lg="10" style={style.col}>
       <Row style={style.col_row} >
         <Col xs="12" md="7" lg="7" style={style.col_center}>
-          <CardTest />
+          <CardTest titulo="Problema: Liga de Padel" number={1} />
         </Col>
         <Col xs="12" md="5" lg="5">
-          <Problem />
+          <CardCode name_problem="Liga de Padel" code={code} />
         </Col>
       </Row>
     </Col>

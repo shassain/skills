@@ -1,24 +1,12 @@
 import React from 'react'
 const style = {
-  outline: "none",
-  resize: "none",
-  overflow: "auto",
-  width: '100%'
+  background: "#fff",
+  whiteSpace: "pre-wrap",
+  wordWrap: "break-word",
+  height: "125px"
 }
-const Output = () => {
-  return <textarea
-    style={style}
-    placeholder="Escriba la entrada"
-    name=""
-    id=""
-    cols="30"
-
-    rows="3">fdsjfksdj
-    dskfsdk
-    kldsmflksd
-    dsknfksdjnfsd
-    djfknskdjnfds
-    sdkfsdkjnkfds
-</textarea>
+const Output = ({ number, value = "" }) => {
+  return <pre id={`output-${number}`} style={style}>{value}
+  </pre>
 }
 export default Output;

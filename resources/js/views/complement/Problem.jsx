@@ -1,33 +1,12 @@
 import React from "react";
 import { Pre, Line, LineNo, LineContent } from "./styles";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/github";
+import theme from "./theme";
 
-const exampleCode = `
-import React, { useState } from "react";
-//comet
 
-/**
- * otherr
- */
-function suma(a,b)=>{a+b}
-function Example() {
-  const [count, setCount] = useState(0);
-  let text="otra cade";
-  let number=323.44;
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
-}
-`.trim();
-
-const Problem = () => (
-  <Highlight {...defaultProps} theme={theme} code={exampleCode} language="jsx">
+const Problem = ({ code }) => {
+  const exampleCode = code.trim();
+  return < Highlight {...defaultProps} theme={theme} code={exampleCode} language="php" >
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <Pre className={className} style={style}>
         {tokens.map((line, i) => (
@@ -42,7 +21,7 @@ const Problem = () => (
         ))}
       </Pre>
     )}
-  </Highlight>
-);
+  </Highlight >
+};
 
 export default Problem;

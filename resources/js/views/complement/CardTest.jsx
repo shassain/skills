@@ -1,9 +1,9 @@
 import { transform } from 'lodash'
 import React from 'react'
-import { Col, Card, } from 'react-bootstrap'
+import { Col, Card, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { MdPlayCircleOutline } from "react-icons/md";
-import TextArea from './TextArea'
+import Input from './Input'
 import Output from './Output'
 const style = {
   col: { paddingBottom: "15px", transform: "rotate(3deg)" },
@@ -14,20 +14,27 @@ const style = {
   head: { background: "#111827", color: "#A3E635", textTransform: "uppercase" }
 }
 const CardTest = (props) => {
-  let { childen, text, titulo, url } = props;
+  let { childen, number, titulo, url } = props;
   return <Col xs="12" sm="12" lg="12" style={style.col}>
     <Card style={style.card}>
-      <Card.Header style={style.head}>Nombre del problema</Card.Header>
+      <Card.Header style={style.head}>{titulo} </Card.Header>
       <Card.Body style={style.body}>
-        <label>Entrada</label>
-        <TextArea />
-        <label>Salida</label>
-        <Output />
+        <Row>
+          <Col>
+            <label>Entrada</label>
+            <Input number={number} />
+          </Col>
+          <Col>
+            <label>Salida</label>
+            <Output number={number} />
+          </Col>
+        </Row>
       </Card.Body>
       <Card.Footer style={style.footer}>
-        <Link to={url} style={{ background: "#111827", color: "#A3E635", fontSize: "1.2em" }} >
+        <button type="button">
           <MdPlayCircleOutline style={{ fontSize: "35px" }} /> Iniciar tets
-        </Link>
+        </button>
+        <a href="#">  Descargar el problema</a>
       </Card.Footer>
     </Card>
   </Col >

@@ -5,13 +5,12 @@ const style = {
   overflow: "auto",
   width: '100%'
 }
-const TextArea = () => {
+const Input = ({ number }) => {
   return <textarea
     style={style}
     placeholder="Escriba la entrada"
-    name=""
-    id=""
+    id={`input-${number}`}
     cols="30"
     rows="5"></textarea>
 }
-export default TextArea;
+export default Input;
