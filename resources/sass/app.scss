@@ -1,1 +1,56 @@
-//
+/* Mys SASS*/
+$body:#e9fff8;
+$color1: #BCF165;
+$color2: #12B77F;
+$color3: #D946EF;
+$color4: #9534EA;
+$color5: #49DD82;
+$color6: #07B6D3;
+$color7: #005222;
+$color8: #1E8349;
+html{
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: $body !important;
+}
+
+/* make the customizations */
+$theme-colors: (
+        "info": tomato,
+        "danger": teal
+);
+
+/* import bootstrap to set changes */
+
+
+.header {
+  text-align: center;
+}
+
+span {
+  &.dangerText {
+    color: #dc3545;
+  }
+
+  &.infoText {
+    color: #17a2b8;
+    font-weight: bold;
+  }
+}
+
+
+
+.shassain{
+  &_navbar{
+    background: $color1;
+    background: linear-gradient(to top right, $color1 , $color2);
+  }
+  &_container{
+    background: $color3;
+    background: linear-gradient(to top right, $color3 , $color4);
+  }
+}

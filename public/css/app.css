@@ -1,0 +1,40 @@
+/* Mys SASS*/
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e9fff8 !important;
+}
+
+/* make the customizations */
+
+/* import bootstrap to set changes */
+
+.header {
+  text-align: center;
+}
+
+span.dangerText {
+  color: #dc3545;
+}
+
+span.infoText {
+  color: #17a2b8;
+  font-weight: bold;
+}
+
+.shassain_navbar {
+  background: #BCF165;
+  background: linear-gradient(to top right, #BCF165, #12B77F);
+}
+
+.shassain_container {
+  background: #D946EF;
+  background: linear-gradient(to top right, #D946EF, #9534EA);
+}
+

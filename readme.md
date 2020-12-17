@@ -29,7 +29,7 @@ await install of required, then excute:
 ```
 You can see an example in broswer http://127.0.0.1:3000
 
-### Tests
+### :wrench: Tests
 execute in terminal:
 ```
 vendor/bin/phpunit
