@@ -26,7 +26,6 @@ class MPaddle extends Model {
     else {
       let resp = "";
       for (let re of this.respuesta) {
-        console.log(re)
         resp += `${re.win} ${re.missing_games}\n`
       }
       return resp;

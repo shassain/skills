@@ -15,7 +15,7 @@ const style = {
 }
 const onSubmit = async (model, onChangeModel) => {
   let validate = model.validate();
-  console.log("validate value:", validate)
+
   if (!validate.ok) {
     let eror = "";
     for (let er of validate.errors) {
