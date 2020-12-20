@@ -1,12 +1,12 @@
-### :scroll: Prueba de Habilidades
+### :scroll: Test of Skills
 
 Prueba de habilidades.
 
 ## :books: Introduccion
 
 <p align="center">
-La siguiente prueba de habilidades es para la empresa A2O Dev, todo en base a los 
-<a href="https://docs.google.com/document/d/1O_me0BjsBuJ8C9Bjzj7zasIZrr6qD4quzktjQSYKzvk/edit?usp=sharing">enunciados prescritos</a>
+The following skills test is for A2O Dev company, all based on the 
+<a href="https://docs.google.com/document/d/1O_me0BjsBuJ8C9Bjzj7zasIZrr6qD4quzktjQSYKzvk/edit?usp=sharing">problems listed here</a>
 </p>
 
 
@@ -19,7 +19,7 @@ La siguiente prueba de habilidades es para la empresa A2O Dev, todo en base a lo
 
 ### :zap: Install
 
-After install composer, execute in terminal:
+After install composer, enter the project path and execute in terminal:
 
 ```
   composer install
@@ -30,9 +30,17 @@ await install of required, then excute:
 ```
 You can see an example in broswer http://127.0.0.1:3000
 
-### Tests
+### :boom: Tests
 execute in terminal:
 ```
 vendor/bin/phpunit
 ```
 sometimes you need quotes: `"vendor/bin/phpunit"`
+
+### :sparkles: Code React
+
+Code of react, this path `resources/js`
+
+### :smiley: Finished Product
+
+![Image Product](https://github.com/shassain/skills/tree/main/public/img/img.png)
