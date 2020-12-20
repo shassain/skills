@@ -16,6 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post("problema-1","PaddleController@index")->name("api.problem1");
-Route::post("problema-2","ChessController@index")->name("api.problem2");
-Route::post("problema-3","StringLoveController@index")->name("api.problem3");
+Route::post("problem-1","PaddleController@index")->name("api.problem1");
+Route::post("problem-2","ChessController@index")->name("api.problem2");
+Route::post("problem-3","StringLoveController@index")->name("api.problem3");

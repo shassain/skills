@@ -32,7 +32,6 @@ class Category{
         }
       }
     }
-    
     return $win;
   }
   protected function winner($name1,$num1,$name2,$num2){
@@ -50,7 +49,6 @@ class Category{
     $one=$this->findTeam($t->name());
     if($one==null){
       $this->teams->push($t);
-      
     }
   }
   public function totalGamesToPlayers(){
@@ -62,6 +60,7 @@ class Category{
     $win=$this->winner($name1,$num1,$name2,$num2);
     $losser=$this->losser($name1,$num1,$name2,$num2);
     $this->teams->each(function($ele,$key)use($win,$losser){
+      //la cantidad de partidas depende de la cantidad
       if($win===$ele->name()){
         $ele->addPoints(2);
         $ele->addGames(1);

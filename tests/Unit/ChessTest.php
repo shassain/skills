@@ -14,7 +14,7 @@ class ChessTest extends TestCase
     public function testFisrt()
     {
 
-        $response = $this->json('POST', 'api/problema-2',
+        $response = $this->json('POST', 'api/problem-2',
             [
                 "input2"=>"100 0
                         50 28"]
@@ -31,7 +31,7 @@ class ChessTest extends TestCase
     public function testSecond()
     {
 
-        $response = $this->json('POST', 'api/problema-2',
+        $response = $this->json('POST', 'api/problem-2',
             [
                 "input2"=>"4 0
                             4 4"]
@@ -48,7 +48,7 @@ class ChessTest extends TestCase
     public function testThird()
     {
 
-        $response = $this->json('POST', 'api/problema-2',
+        $response = $this->json('POST', 'api/problem-2',
             [
                 "input2"=>"5 3
                     4 3
@@ -70,7 +70,7 @@ class ChessTest extends TestCase
     public function testFourth()
     {
 
-        $response = $this->json('POST', 'api/problema-2',
+        $response = $this->json('POST', 'api/problem-2',
             [
                 "input2"=>"1 0
                     1 1

@@ -113,7 +113,11 @@ class StringLoveProblem implements IProblem{
             $suffixRank[$stp][$myTuple[$i]->originalIndex()] = $currRank;
         }
     }
-    return $myTuple;
+    $resp=[];
+    foreach($myTuple as $t){
+      array_push($resp,$t->originalIndex());
+    }
+    return $resp;
   }
   public function SuffixArray(int $length,string $str)
   {

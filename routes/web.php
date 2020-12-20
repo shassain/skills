@@ -12,10 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 for($i=1;$i<=3;$i++){
-    Route::get('problema-'.$i, function () {
-        return view('welcome');
+    Route::get('problem-'.$i, function () {
+        return view('index');
     }); 
 }
+Route::get("get-file/{name}","FileController@download");

@@ -8,7 +8,7 @@ const style = {
 const Home = () => {
   return <Row className="justify-content-md-center" style={style.row}>
     {
-      cardList.map(card => (<CardLink key={card.id} url={card.url} text={card.text} titulo={card.label} />))
+      cardList.map(card => (<CardLink key={card.id} url={card.url} text={card.text} titulo={card.label} tipo={card.tipo} />))
     }
   </Row>
 }

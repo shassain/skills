@@ -6,6 +6,8 @@ import Head from '../views/index/Head';
 import Body from '../views/index/Body';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { routeList } from '../routes/routes'
+
+import 'react-toastify/dist/ReactToastify.css';
 import {
   BrowserRouter,
   Switch,
@@ -31,6 +33,7 @@ export default class App extends Component {
           </Switch>
         </Body>
       </Container>
+
     </BrowserRouter>
 
   }

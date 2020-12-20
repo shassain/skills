@@ -13,7 +13,7 @@ class PaddleTest extends TestCase
      */
     public function testExample()
     {
-        $response = $this->json('POST', 'api/problema-1',
+        $response = $this->json('POST', 'api/problem-1',
             [
                 "input1"=>"Junior
                             Buenisimos 3 Malisimos 0

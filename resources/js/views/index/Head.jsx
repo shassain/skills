@@ -13,14 +13,14 @@ const Head = () => (
   <Row className="justify-content-md-center" style={style.row}>
     <div style={style.div}>
       <h1 style={style.h1}>
-        Desarrollo de Habilidades
+        Prueba de Habilidades
       </h1>
       <div style={{ display: "flex", justifyContent: "space-around", color: "red" }}>
-        <Link to="./" style={{ color: "#F6BC24" }}>
+        <Link to="./" style={{ color: "gold" }}>
           <FiHome /> Inicio
         </Link>
         {
-          cardList.map(el => <Link to={el.url} style={{ color: "#F6BC24" }}>
+          cardList.map(el => <Link to={el.url} style={{ color: "gold" }} key={el.id}>
             <FiChevronRight /> {el.label}
           </Link>)
         }
