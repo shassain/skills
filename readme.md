@@ -43,4 +43,4 @@ Code of react, this path `resources/js`
 
 ### :smiley: Finished Product
 
-![Image Product](https://github.com/shassain/skills/tree/main/public/img/img.png)
+![Image Product](https://github.com/shassain/skills/blob/main/public/img/img.png?raw=true)
